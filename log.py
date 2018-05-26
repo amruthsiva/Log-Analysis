@@ -33,18 +33,18 @@ def top_articles():
     # Run Query
     results = run_query(query)
 
-    # Print Results
+    # Results
     print('\n The Most Popular Three Articles Of All Time:')
     count = 1
     for i in results:
-        number = '(' + str(count) + ') "'
+        n = '(' + str(count) + ') "'
         title = i[0]
         views = '" with ' + str(i[1]) + " views"
-        print(number + title + views)
+        print(n + title + views)
         count += 1
 
 
-def top_article_authors():
+def top_authors():
     """returns top 3 authors"""
 
     # Build Query String
@@ -63,7 +63,7 @@ def top_article_authors():
     # Run Query
     results = run_query(query)
 
-    # Print Results
+    # Results
     print('\n The Most Popular Article Authors Of All Time:')
     count = 1
     for i in results:
@@ -97,7 +97,7 @@ def days_with_errors():
     # Run Query
     results = run_query(query)
 
-    # Print Results
+    # Results
     print('\n DAYS WITH MORE THAN 1% ERRORS:')
     for i in results:
         date = i[0].strftime('%B %d, %Y')
@@ -106,5 +106,5 @@ def days_with_errors():
 
 print('Listing Out The Results...\n')
 top_articles()
-top_article_authors()
+top_authors()
 days_with_errors()
